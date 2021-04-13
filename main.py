@@ -423,7 +423,7 @@ class Music(commands.Cog):
         embed.set_author(name="Eren Jäger",
                          url="https://discord.com/api/oauth2/authorize?client_id=831643310623817729&permissions=11544576&scope=bot")
         embed.set_footer(text="Bot made by @Valle#2155",
-                         icon_url="https://ibb.co/yhh5tZT")
+                         icon_url="https://i.ibb.co/yhh5tZT/eren-cut.jpg")
 
         await ctx.send(content=ctx.author.mention, embed=embed)
 
