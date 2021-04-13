@@ -155,8 +155,8 @@ class Song:
                               description=f"​\n:musical_note:   [{self.source.title}]({self.source.url}) \n​")
 
         embed.set_thumbnail(url=self.source.thumbnail)
-        embed.set_author(name="Yori Music",
-                         url="https://discord.com/oauth2/authorize?client_id=754127785735356478&permissions=11893824&scope=bot")
+        embed.set_author(name="Eren Jäger",
+                         url="https://discord.com/api/oauth2/authorize?client_id=831643310623817729&permissions=3147776&scope=bot")
 
 
         if loop:
@@ -165,14 +165,11 @@ class Song:
 
             embed.add_field(name=":x: Loop", value="Off", inline=True)
 
-
-
         embed.add_field(name=":outbox_tray: Uploader", value=f"[{self.source.uploader}]({self.source.uploader_url})", inline=True)
         embed.add_field(name=f":eyes: Views", value=self.comma_me(str(self.source.views)), inline=True)
         embed.add_field(name=f":left_right_arrow: Length", value=self.source.duration, inline=True)
         embed.add_field(name=":man_raising_hand: Suggested by", value=self.requester.mention, inline=True)
         embed.add_field(name=":calendar_spiral: Uploaded at", value=self.source.upload_date, inline=True)
-        embed.set_footer(text="This Bot was made by the Yori Developer Team", icon_url="https://media.discordapp.net/attachments/316605735251214336/754386081570619573/dev_team_circle.png")
         '''
         embed = (discord.Embed(title='Now playing',
                                description='```css\n{0.source.title}\n```'.format(self),
@@ -417,29 +414,28 @@ class Music(commands.Cog):
         await ctx.send('An error occurred: {}'.format(str(error)))
     @commands.command(name="help")
     async def _send_help(self, ctx: commands.Context):
-        embed = discord.Embed(title="Help", colour=discord.Colour(0x7289da),
-                              description="For more help, feedback or bug reports, you're more than welcome \nto join our [Yori Community Server](https://discord.gg/bbjXTJm).\n\nYou can get a command list with `-commands`.\n\n**Have fun!**")
-
+        embed = discord.Embed(title="Hey there!", colour=discord.Colour(0x7289da),
+                              description="This is bot is laid out to be a fun music bot with some cool features from the Attack on Titan Anime!.\nYou can get a command list with `-commands`.\n\n**Have fun!**")
+        '''
         embed.set_thumbnail(
             url="https://cdn.discordapp.com/attachments/316605735251214336/754386081570619573/dev_team_circle.png")
-        embed.set_author(name="Yori Music",
-                         url="https://discord.com/oauth2/authorize?client_id=754127785735356478&permissions=11893824&scope=bot")
-        embed.set_footer(text="Bot made by the Yori Developer Team",
-                         icon_url="https://cdn.discordapp.com/attachments/316605735251214336/754386081570619573/dev_team_circle.png")
+            '''
+        embed.set_author(name="Eren Jäger",
+                         url="https://discord.com/api/oauth2/authorize?client_id=831643310623817729&permissions=3147776&scope=bot")
+        embed.set_footer(text="Bot made by @Valle#2155",
+                         icon_url="https://ibb.co/yhh5tZT")
 
         await ctx.send(content=ctx.author.mention, embed=embed)
 
     @commands.command(name="commands")
     async def _get_commands(self, ctx: commands.Context):
         embed = discord.Embed(colour=discord.Colour(0x7289da))
-
+        '''
         embed.set_thumbnail(
             url="https://cdn.discordapp.com/attachments/316605735251214336/754386081570619573/dev_team_circle.png")
-        embed.set_author(name="Yori Music",
-                         url="https://discord.com/oauth2/authorize?client_id=754127785735356478&permissions=11893824&scope=bot")
-        embed.set_footer(text="Bot made by the Yori Developer Team",
-                         icon_url="https://cdn.discordapp.com/attachments/316605735251214336/754386081570619573/dev_team_circle.png")
-
+        '''
+        embed.set_author(name="Eren Jäger",
+                         url="https://discord.com/api/oauth2/authorize?client_id=831643310623817729&permissions=3147776&scope=bot")
         embed.add_field(name="**Commands:**",
                         value="​\n```-play {Search term / Youtube URL }```\n```-pause```\n```-resume```\n```-stop```\n\n\n```-now```\n```-queue```\n```-skip```\n```-remove {song number in queue}```\n```-shuffle```\n\n\n```-loop```\n```-summon {Voice channel name}```\n```-volume {1 - 100}```\n\n\n​```-join```\n```-leave```\n​")
 
