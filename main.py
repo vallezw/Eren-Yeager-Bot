@@ -18,7 +18,7 @@ load_dotenv()
 
 TOKEN = os.getenv("TOKEN")
 
-PREFIX = "-"
+PREFIX = "eren!"
 
 class VoiceError(Exception):
     pass
