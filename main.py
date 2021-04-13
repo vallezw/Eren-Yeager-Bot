@@ -156,7 +156,7 @@ class Song:
 
         embed.set_thumbnail(url=self.source.thumbnail)
         embed.set_author(name="Eren Jäger",
-                         url="https://discord.com/api/oauth2/authorize?client_id=831643310623817729&permissions=3147776&scope=bot")
+                         url="https://discord.com/api/oauth2/authorize?client_id=831643310623817729&permissions=11544576&scope=bot")
 
 
         if loop:
@@ -421,7 +421,7 @@ class Music(commands.Cog):
             url="https://cdn.discordapp.com/attachments/316605735251214336/754386081570619573/dev_team_circle.png")
             '''
         embed.set_author(name="Eren Jäger",
-                         url="https://discord.com/api/oauth2/authorize?client_id=831643310623817729&permissions=3147776&scope=bot")
+                         url="https://discord.com/api/oauth2/authorize?client_id=831643310623817729&permissions=11544576&scope=bot")
         embed.set_footer(text="Bot made by @Valle#2155",
                          icon_url="https://ibb.co/yhh5tZT")
 
