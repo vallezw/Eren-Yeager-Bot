@@ -202,6 +202,9 @@ class SongQueue(asyncio.Queue):
     def shuffle(self):
         random.shuffle(self._queue)
 
+    def put_at_first(self, song):
+        self._queue.insert(song, self._queue)
+
     def remove(self, index: int):
         del self._queue[index]
 
@@ -412,6 +415,7 @@ class Music(commands.Cog):
             return
 
         await ctx.send('An error occurred: {}'.format(str(error)))
+
     @commands.command(name="help")
     async def _send_help(self, ctx: commands.Context):
         embed = discord.Embed(title="Hey there!", colour=discord.Colour(0x7289da),
@@ -725,6 +729,20 @@ class Music(commands.Cog):
             await ctx.voice_state.embed_mess.delete()
 
         ctx.voice_state.embed_mess = await ctx.send(embed=ctx.voice_state.current.create_embed(ctx.voice_state.loop))
+
+    @commands.command(name="oi")
+    async def _oi(self, ctx: commands.Context):
+        try:
+            source = await YTDLSource.create_source(ctx, "oi oi oi mate mate", loop=self.bot.loop)
+        except YTDLError as e:
+            print(e)
+            await ctx.send('An error occurred while processing this request: {}'.format(str(e)))
+
+        else:
+            song = Song(source)
+            ctx.voice_state.songs.put_at_first(song)
+            await self._skip(ctx)
+
 
     @commands.command(name='play')
     async def _play(self, ctx: commands.Context, *, search: str):
