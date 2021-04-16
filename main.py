@@ -419,7 +419,7 @@ class Music(commands.Cog):
     @commands.command(name="help")
     async def _send_help(self, ctx: commands.Context):
         embed = discord.Embed(title="Hey there!", colour=discord.Colour(0x7289da),
-                              description="This is bot is laid out to be a fun music bot with some cool features from the \n Attack on Titan Anime!\nYou can get a command list with `-commands`.\n\n**Have fun!**")
+                              description=f"This is bot is laid out to be a fun music bot with some cool features from the \n Attack on Titan Anime!\nYou can get a command list with `{PREFIX}commands`.\n\n**Have fun!**")
         '''
         embed.set_thumbnail(
             url="https://cdn.discordapp.com/attachments/316605735251214336/754386081570619573/dev_team_circle.png")
